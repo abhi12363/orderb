@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="profile-info">
+    <div class="row">
+      <div class="col-xs-3 col-md-3">
+        <h5>Date</h5>
+        <p class="info">User can Select the date format for the organisations.</p>
+      </div>
+      <div class="col-xs-3 col-md-3 action-item">
+          <tree-select name="simpleSelect" [items]="dateFormatOptions" childrenField="children" 
+            [(ngModel)]="selectedDate" required=true #simpleSelect="ngModel"
+            [filterPlaceholder]="FilterPlaceholder" [allowFilter]=true [disabled]=false>
+          </tree-select>
+        </div>
+        <div class="col-xs-3 col-md-3">
+            <h5>Time</h5>
+            <p class="info">User can change the time format for the application.</p>
+          </div>
+          <div class="col-xs-3 col-md-3 action-item">
+              <tree-select name="simpleSelect" [items]="timeFormatOptions" childrenField="children" 
+                [(ngModel)]="selectedTime" required=true #simpleSelect="ngModel"
+                [filterPlaceholder]="FilterPlaceholder" [allowFilter]=true [disabled]=false>
+              </tree-select>
+          </div>    
+    </div>
+      
+  </div>
+</div>
+
+
+
+
+
+
+

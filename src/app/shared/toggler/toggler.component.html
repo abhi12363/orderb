@@ -1,0 +1,21 @@
+<!-- <div class="btn-group" id="toggler" data-toggle="buttons" #toggler>
+    <label class="btn btn-default btn-sm " [ngClass]='entry.style' id={{entry.value}}  (click)="onSelectionChange(entry.value)" *ngFor="let entry of entries" ng-modal=viewInit() >
+      <input type="radio" checked data-toggle="toggle">
+      {{entry.label}}
+    </label>
+  </div> -->
+
+<div class="onoffswitch" [ngStyle]="{'width': width}">
+  <input type="checkbox" name="{{key}}" 
+    (click)="onSelectionChange($event)" 
+    class="onoffswitch-checkbox" id="{{key}}" #toggler>
+  <label class="onoffswitch-label" for="{{key}}" >
+    <span class="onoffswitch-inner" #span>
+      {{displayText}}
+    </span>
+    <span class="onoffswitch-switch">
+        <span class="_2AVJ"></span>
+    </span>
+  </label>
+</div>
+

@@ -1,0 +1,56 @@
+<app-filter>
+  <div class="app-nav">
+    <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info navbar-btn"
+      (click)="add.show()">
+      <i class="glyphicon glyphicon-plus"></i>
+      <span>Add</span>
+    </button>
+  </div>
+</app-filter>
+
+<app-modal #add [entries]='entries' title="Add Prep">
+
+  <div class="modal-container">
+    <router-outlet name='modal'></router-outlet>
+  </div>
+  <div class="app-modal-footer">
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+</app-modal>
+
+<app-grid [header]='columnDefs'>
+  <tbody class="app-grid-col">
+    <tr *ngFor='let row of rowData' class="grid-row">
+      <td scope="row" width="40%" style="vertical-align:middle;text-align: center;">
+        {{prep.id}}
+      </td>
+      <td scope="row" width="40%" style="vertical-align:middle;text-align: center;">
+        {{prep.name}}
+      </td>
+      <td scope="row" width="40%" style="vertical-align:middle;text-align: center;">
+        {{prep.unit}}
+      </td>
+      <td scope="row" width="10%" style="vertical-align:middle;text-align: center;">
+        {{prep.cost}}
+      </td>
+      <td scope="row" width="10%" style="vertical-align:middle;text-align: center;">
+        {{prep.status}}
+      </td>
+      <td scope="row" width="10%" style="vertical-align:middle;text-align: center;">
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <a href="#">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <a href="#">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</app-grid>

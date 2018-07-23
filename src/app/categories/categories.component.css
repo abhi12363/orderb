@@ -1,0 +1,15 @@
+.action{
+    float: right;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    /* width: 100px; */
+    /* height: 100px; */
+    -webkit-transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);   
+}
+.title{
+    float: left;
+    font-size: 20px;
+    color: rgb(87, 84, 84);
+}

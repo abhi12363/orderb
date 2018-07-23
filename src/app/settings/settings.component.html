@@ -1,0 +1,65 @@
+<app-modal #organization [entries]='entries' title="My Organization">
+    
+  <div class="modal-container">
+    <router-outlet name='modal'></router-outlet>
+  </div>
+  <div class="app-modal-footer">
+    <button type="button" class="btn btn-primary" (click)="performAction()">Save changes</button>
+  </div>
+</app-modal>
+
+  <app-modal #billing title="Billing & Subscription">
+      
+      <div class="app-modal-body">
+        <img [src]=''/>
+      </div>
+      <div class="app-modal-footer">
+        <button type="button" class="btn btn-default" (click)="billing.show()">Show modal 2</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </app-modal>
+
+
+    <app-modal #site title="Site Settings">
+       
+        <div class="app-modal-body">
+          <img [src]=''/>
+        </div>
+        <div class="app-modal-footer">
+          <button type="button" class="btn btn-default" (click)="site.show()">Show modal 2</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </app-modal>
+
+
+      <app-modal #profile title="Profile Settings">
+         
+          <div class="app-modal-body">
+            <img [src]=''/>
+          </div>
+          <div class="app-modal-footer">
+            <button type="button" class="btn btn-default" (click)="profile.show()">Show modal 2</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </app-modal>
+
+
+<div class="container m-t-md">
+    <div class="row m-t-md" >
+        <div class="col-xs-12 text-style">
+          <h3>Manage Account</h3>
+        </div>
+    </div>
+    <div class="row m-t-md vertical-center" >
+      <div class="col-xs-12 col-md-4" *ngFor="let setting of settings">
+        <article class="card card-inverse animated fadeInLeft" (click)="action(setting.actionUrl)">
+          <img class="img-responsive" src ={{setting.imgUrl}}
+          alt={{setting.displayName}} />
+          <div class="card-img-overlay text-style">
+            <h4 class="card-title">{{setting.displayName}}</h4>
+          </div>
+        </article>
+      </div>
+      
+    </div><!-- .end Second row -->
+  </div>

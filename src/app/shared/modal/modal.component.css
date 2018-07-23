@@ -1,0 +1,62 @@
+.modal {
+  background: rgba(0,0,0,0.6);
+}
+.modal-header{
+  border-bottom: 0px solid #e5e5e5;
+}
+.hide{
+  display: none;
+}
+.app-modal-header{
+  font-weight: bold;
+  color: #66637b;
+  font-size: 20px;
+  font-style: oblique;
+}
+.app-modal-header>a{
+  float: right;
+  font-style: normal;
+  color: #f50d0d;
+  cursor: pointer;
+  text-decoration: none;
+}
+.vertical-menu {
+  width: 100%; /* Set a width if you like */
+}
+#myTab{
+  padding-left: 5px;
+  padding-right:5px;
+}
+.vertical-menu a {
+  background-color: #9e99b3; /* Grey background color */
+  color: white; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #2e3655; /* Add a green color to the "active/current" link */
+  color: white;
+}
+.modal-body {
+  padding: 0px;
+  position: relative;
+  overflow-y: auto;
+  min-height: 350px;
+  min-width: 1200px;
+  max-height: 550px;
+  max-width: 1500px;
+}
+.modal-container{
+  min-height: 350px;
+}
+.modal-content{
+  position: absolute;
+  left: -15%;
+}
+

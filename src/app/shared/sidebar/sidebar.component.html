@@ -1,0 +1,18 @@
+<nav id="sidebar" (mouseleave)="shink($event)" (mouseenter)="expand($event)" class="active">
+    <!-- Sidebar Links -->
+    <ul class="list-unstyled components">
+        <li *ngFor="let entry of items; let i=index" [ngClass]="{'active': selectedIndex == i}" >
+            <a [routerLink]="[{outlets:{aux:[entry.actionurl]}}]" 
+                (click)="setActive(i);" *ngIf='!entry.isParent'>
+                <i class="glyphicon {{entry.icon}}"></i>
+                <label>{{entry.text}}</label>
+            </a>
+            <a  *ngIf='entry.isParent' routerLink="/{{entry.actionurl}}"  
+            (click)="setActive(i);">
+              <i class="glyphicon {{entry.icon}}"></i>
+              <label>{{entry.text}}</label>
+          </a>
+        </li>
+
+    </ul>
+</nav>

@@ -1,0 +1,59 @@
+<div class="profile-info">
+  
+  <div class="row">
+    <div class="col-xs-2 col-md-2 no-padding">
+      <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action" id="list-home-list" 
+            [ngClass]="{'active': selectedIndex == i}" (click)="select(i,site);" *ngFor="let site of sites; let i=index">
+              {{site.name}}
+            </a>
+      </div>
+    </div>
+    <div class="col-xs-10 col-md-10">
+        <h3>Manage Admins For Site {{entry.name}}</h3>
+        <app-filter>
+            <div class="app-nav">
+              <div class="row">
+                    <div class="col-xs-8 col-md-8">
+                        <tree-select name="employeeSelect" [items]="rowData" childrenField="children" 
+                          [(ngModel)]="selectedEmp" required=true #simpleSelect="ngModel"
+                          [filterPlaceholder]="FilterPlaceholder" [allowFilter]=true [disabled]=false>
+                        </tree-select>
+                      </div>
+                  <div class="col-xs-4 col-md-4">
+                      <button type="submit" name="contact" class="btn btn-primary mb-2" (click)="addSite()">Add Employee</button>
+                  </div>
+              </div>
+            </div>
+          </app-filter>
+          <app-grid
+          [header] = 'columnDefs'>
+           <tbody class="app-grid-col">
+            <tr *ngFor='let row of rowData' class="grid-row">
+                <td scope="row" width="25%">
+                  <div class="list-group" id="list-tab" role="tablist">
+                    <div class="list-group-item list-group-item-action">
+                        <!-- [ngClass]="{'active': selectedIndex == i}" (click)="select(i,site);" *ngFor="let site of sites; let i=index" -->
+                        <img src="http://placehold.it/380x500" alt=""  />
+                        <a  id="list-home-list">
+                          {{row.name}}
+                      </a>
+                    </div>
+                  </div>
+                </td>
+                <td scope="row" width="65%" style="vertical-align:middle;text-align: center;">
+                  <app-toggler
+                    key="enableBillingRights-{{row.id}}"
+                    >
+                  </app-toggler>
+                </td>
+                <td scope="row" width="10%" style="vertical-align:middle;text-align: center;">
+                  <button class="btn btn-danger" >Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </app-grid>
+    </div>
+  </div>
+  
+</div>

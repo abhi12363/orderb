@@ -1,0 +1,51 @@
+.no-padding{
+    padding-right: 0;
+    padding-top:5px;
+}
+.no-padding >div>a{
+    padding: 10px;
+    font-weight: normal;
+    /* text-align: center; */
+}
+.no-padding >div>a.active{
+    color:#fff;
+}
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.list-group-item {
+    cursor: pointer;
+}
+.list-group{
+    margin-bottom: 0px;
+}
+.list-group>div{
+    padding: 2px;
+}
+.list-group-item>img{
+    max-width: 90px;
+    max-height: 120px;
+}
+.list-group-item>a{
+    max-width: 150px;
+}
+div>a{
+    color: #000;
+    text-decoration: none;
+    padding: 2px;
+    vertical-align: middle;
+    font-style: initial;
+    font-weight: bold;
+}
+div.active>a{
+    color:#fff;
+}
+
+.list-group>div.active>div>a{
+    color: #fff;
+}
+.app-grid-col{
+    overflow-y: auto;
+}
+

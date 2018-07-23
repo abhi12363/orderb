@@ -1,0 +1,77 @@
+.table{
+    background: rgb(255, 255, 255);
+}
+
+.table > thead{
+    /* background:hsl(219, 12%, 81%); */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 30%, #f6f6f6 30%, #e5e5e5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(30%,#f6f6f6), color-stop(30%,#f6f6f6), color-stop(100%,#e5e5e5));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 30%,#f6f6f6 30%,#e5e5e5 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 30%,#f6f6f6 30%,#e5e5e5 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 30%,#f6f6f6 30%,#e5e5e5 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 30%,#f6f6f6 30%,#e5e5e5 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+
+}
+
+.table > thead > tr > th {
+    vertical-align: middle;
+    text-align: center;
+}
+.table > thead > tr > td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.margin-bottom-basic {
+    margin-bottom: 15px;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.items-per-page {
+    margin-left: 15px;
+}
+
+.sortable:after {
+    font: 14px/1 FontAwesome;
+    content: "\f0dc";
+}
+
+.sortable.sort-ascent:after {
+    content: '\f0de';
+    vertical-align: bottom;
+}
+
+.sortable.sort-descent:after {
+    content: "\f0dd";
+    vertical-align: top;
+}
+
+.panel-heading [data-toggle="collapse"]:after
+{
+    font-family: 'Glyphicons Halflings';
+    content: "\e072"; /* "play" icon */
+    float: right;
+    color: #b0c5d8;
+    font-size: 18px;
+    line-height: 22px;
+
+    /* rotate "play" icon from > (right arrow) to down arrow */
+    -webkit-transform: rotate(-90deg);
+    -moz-transform:    rotate(-90deg);
+    -ms-transform:     rotate(-90deg);
+    -o-transform:      rotate(-90deg);
+    transform:         rotate(-90deg);
+}
+.panel-heading [data-toggle="collapse"].collapsed:after
+{
+    /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+    -webkit-transform: rotate(90deg);
+    -moz-transform:    rotate(90deg);
+    -ms-transform:     rotate(90deg);
+    -o-transform:      rotate(90deg);
+    transform:         rotate(90deg);
+}

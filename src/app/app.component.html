@@ -1,0 +1,65 @@
+<div>
+  <nav class='navbar navbar-default'>
+    <div class='container-fluid'>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">OrderBee</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav" *ngIf="!this._appService.isLogedIn();">
+          <!--  <li><a class="btn btn-primary" (click)="data()" routerLinkActive="active">dashboard</a></li> -->
+          <li *ngIf='isLogin==false'>
+            <a class="btn btn-primary" (click)="login()">Login</a>
+          </li>
+          <li>
+            <a class="btn btn-info" (click)="register()">Signup</a>
+          </li>
+
+        </ul>
+        <ul class="nav navbar-nav" *ngIf="this._appService.isLogedIn();">
+          <li>
+            <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
+              <img src="http://placehold.it/30x30" class="img-circle special-img">
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <div class="navbar-login">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p class="text-center">
+                                    <span class="glyphicon glyphicon-user icon-size"></span>
+                                </p>
+                            </div>
+                            <div class="col-lg-8">
+                                <p class="text-left"><strong>{{this._appService.getUser().customerName}}</strong></p>
+                                <p class="text-left small">correoElectronico@email.com</p>
+                                <p class="text-left">
+                                    <a class="btn btn-primary btn-block btn-sm">Manage Profile</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <div class="navbar-login navbar-login-session">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>
+                                    <a class="btn btn-danger btn-block" (click)="logout()">Sign Out</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+  <div class='container-fluid'>
+    <router-outlet></router-outlet>
+  </div>
+</div>

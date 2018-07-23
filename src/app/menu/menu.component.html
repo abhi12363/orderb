@@ -1,0 +1,46 @@
+<app-filter>
+    <div class="app-nav">
+        <div class="dropdown">
+            <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info navbar-btn"
+                (click)="add.show()">
+                <i class="glyphicon glyphicon-plus"></i>
+                <span>Add</span>
+            </button>
+            <!-- <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info navbar-btn">
+                <i class="glyphicon glyphicon-align-left"></i>
+                <span>Action</span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="sidebarCollapse">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div> -->
+        </div>
+    </div>
+</app-filter>
+
+<app-modal #add [entries]='entries' title="Add Menu">
+    <div class="modal-container">
+        <router-outlet name='modal'></router-outlet>
+    </div>
+    <div class="app-modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+</app-modal>
+
+<app-grid [header]='columnDefs'>
+    <tbody class="app-grid-col">
+        <tr *ngFor='let row of rowData' (click)="detail(row)" class="grid-row">
+            <td scope="row">
+                {{row.menuID}}
+            </td>
+            <td scope="row">
+                {{row.menuItemGroupID}}
+            </td>
+            <td scope="row">
+                {{row.displayName}}
+            </td>
+
+        </tr>
+    </tbody>
+</app-grid>

@@ -1,0 +1,59 @@
+<app-filter>
+  <div class="app-nav">
+    <div class="row">
+          <div class="col-xs-11 col-md-11">
+              <div class="row">
+                  <div class="col-xs-3 col-md-3 title">
+                      Add Menu Categories
+                  </div>
+                  <div class="col-xs-5 col-md-5">
+                    <label class="sr-only" for="inlineFormInputGroup">Major Category</label>
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Major Category" 
+                      [value]="category.majorCategory" (input)="category.majorCategory = $event.target.value">
+                  </div>
+                  <div class="col-xs-4 col-md-4">
+                    <label class="sr-only" for="inlineFormInputGroup">Minor Category</label>
+                    <input type="text" name="email" class="form-control" id="inlineFormInputGroup" 
+                      placeholder="Minor Category" [value]="category.minorCategory" (input)="category.minorCategory = $event.target.value">
+                  </div>
+                  
+              </div>
+          </div>
+          <div class="col-xs-1 col-md-1">
+            <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-info navbar-btn"
+              (click)="addCategory()">
+              <i class="glyphicon glyphicon-plus"></i>
+              <span>Add</span>
+            </button>
+          </div>
+        </div>
+  </div>
+</app-filter>
+<app-grid
+          [header] = 'columnDefs'>
+           <tbody class="app-grid-col">
+            <tr *ngFor='let row of rowData' class="grid-row">
+                <td scope="row" width="45%" style="vertical-align:middle;text-align: center;">
+                  {{row.majorCategory}}
+                </td>
+                <td scope="row" width="45%" style="vertical-align:middle;text-align: center;">
+                    {{row.minorCategory}}
+                </td>
+                <td scope="row" width="10%" style="vertical-align:middle;text-align: center;">
+                    <div class="row">
+                      <div class="col-xs-6 col-md-6">
+                          <a href="#">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                          
+                      </div>
+                      <div class="col-xs-6 col-md-6">
+                          <a href="#">
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                      </div>
+                    </div>
+                </td>
+              </tr>
+            </tbody> 
+          </app-grid>

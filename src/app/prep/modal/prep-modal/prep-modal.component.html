@@ -1,0 +1,58 @@
+<div class="profile-info modal-container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="row">
+                <div class="col-xs-2 col-md-2 profile-pic">
+                    <img src="http://placehold.it/380x500" alt="" />
+                    <label class="btn btn-default">
+                        <span>Change Picture</span>
+                        <input id="my-file-selector" type="file" style="display:none;">
+                    </label>
+                </div>
+                <div class="col-xs-10 col-md-10">
+                    <div class="row">
+                        <div class="form-group has-success has-feedback">
+                            <div class="col-xs-4">
+                                <label class="control-label" for="orgSuccess">Prep Id</label>
+                                <input type="text" id="orgSuccess" class="form-control" placeholder="Prep Id">
+                                <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                                <span class="help-block" style="display:none">Prep Id</span>
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="control-label" for="inputSuccess">Prep Name</label>
+                                <input type="text" id="inputSuccess" class="form-control" placeholder="Prep Name">
+                                <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                                <span class="help-block" style="display:none">Prep Name is available</span>
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="control-label" for="citySuccess">Description Of Recipe Unit</label>
+                                <input type="text" id="citySuccess" class="form-control" placeholder="Description Of Recipe Unit">
+                                <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                                <span class="help-block" style="display:none">Username is available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group has-success has-feedback">
+                            <div class="col-xs-3">
+                                <label class="control-label" for="orgSuccess">Lot Conversion</label>
+                                <input type="text" id="orgSuccess" class="form-control" placeholder="Lot Conversion">
+                                <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                                <span class="help-block" style="display:none">Lot Conversion</span>
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="control-label" for="orgSuccess">Is Active</label>
+                                <br/>
+                                <app-toggler
+                                    key="prepIsActive" class="form-check-input">
+                                </app-toggler>
+                                <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                                <span class="help-block" style="display:none">Is Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="modal fade" tabindex="-1" [ngClass]="{'in': visibleAnimate}"
+    [ngStyle]="{'display': visible ? 'block' : 'none', 'opacity': visibleAnimate ? 1 : 0}"
+    >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+          <div class="app-modal-header">
+              <b>{{title}}</b>
+              <a (click)="hide();">X</a>
+          </div> 
+      </div>
+      <div class="vertical-menu">
+          <ul class="nav nav-tabs" id="myTab">
+              <li *ngFor="let entry of entries; let i=index" [ngClass]="{'hide':!entry.showTab}">
+                <a [routerLink]="[{outlets:{modal:[entry.route]}}]" [ngClass]="{'active': selectedIndex == i}" 
+                    (click)="setActive(i);">
+                  {{entry.label}}
+                </a>
+              </li>
+        </ul>
+      </div>
+      <div class="modal-body">
+        <ng-content select=".modal-container"></ng-content>
+      </div>
+      <div class="modal-footer">
+        <ng-content select=".app-modal-footer"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

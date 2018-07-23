@@ -1,0 +1,14 @@
+.navbar{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.nav-container{
+    margin: 6px;
+}
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+  }

@@ -1,0 +1,88 @@
+<div class="profile-info">
+  <div class="row">
+    <div class="col-xs-4 col-md-4">
+      <label><h5>Enable Email Services</h5></label>
+      <p class="info">By enabling this flag employees can send/receive Emails for all Notification Preferences.</p>
+    </div>
+    <div class="col-xs-2 col-md-2 action-item">
+      <app-toggler 
+        (onSelection) = "getValue($event)" 
+        [entries]='entries'
+        default="1"
+        key="emailNotification"
+      ></app-toggler>
+    </div>
+
+    <div class="col-xs-4 col-md-4">
+      <label><h5>Enable Push Notifications</h5></label>
+      <p class="info">By enabling this flag employees can send/receive Push Notifications for all Notification Preferences.</p>
+    </div>
+    <div class="col-xs-2 col-md-2 action-item">
+      <app-toggler 
+        (onSelection) = "getValue($event)" 
+        [entries]='entries'
+        default="0"
+        key="notification"
+      ></app-toggler>
+    </div>
+    
+  </div>
+
+  <div class="row">
+      <div class="col-xs-4 col-md-4">
+        <label><h5>Allow Manager to Send Emails</h5></label>
+        <p class="info">By enabling this flag employees with the employee type Manager can send emails to other employees</p>
+      </div>
+      <div class="col-xs-2 col-md-2 action-item">
+        <app-toggler 
+          (onSelection) = "getValue($event)" 
+          [entries]='entries'
+          default="0"
+          key="managerEmailNotification"
+        ></app-toggler>
+      </div>
+  
+      <div class="col-xs-4 col-md-4">
+        <label><h5>Allow Supervisor to Send Emails</h5></label>
+        <p class="info">By enabling this flag employees with the employee type Supervisor can send emails to other employees.</p>
+      </div>
+      <div class="col-xs-2 col-md-2 action-item">
+        <app-toggler 
+          (onSelection) = "getValue($event)" 
+          [entries]='entries'
+          default="1"
+          key="supervisorEmailNotification"
+        ></app-toggler>
+      </div>
+      
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-md-4">
+          <label><h5>Allow System to Send Emails</h5></label>
+          <p class="info">By Enabling this flag System generated Emails will be sent to the employees.</p>
+        </div>
+        <div class="col-xs-2 col-md-2 action-item">
+          <app-toggler 
+            (onSelection) = "getValue($event)" 
+            [entries]='entries'
+            default="1"
+            key="systemEmailNotification"
+          ></app-toggler>
+        </div>  
+      </div>
+      <div class="row">
+          <div class="col-xs-4 col-md-4">
+            <label><h5>Request Verification For Unauthorized Devices</h5></label>
+            <p class="info">By enabling this flag users of your organization will need to authenticate the devices they would use to access their Hubworks account (one time process ...</p>
+          </div>
+          <div class="col-xs-2 col-md-2 action-item">
+            <app-toggler 
+              (onSelection) = "getValue($event)" 
+              [entries]='entries'
+              default="0"
+              key="verifyUnauthDevice"
+            ></app-toggler>
+          </div>  
+        </div>
+   
+</div>

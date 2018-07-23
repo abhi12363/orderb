@@ -1,0 +1,177 @@
+<div class="modal-overlay-component">
+  <div [ngStyle]="{'width': width + 'px', 'height': height + 'px'}">
+    <div class="container">
+
+      <div class="stepwizard col-md-offset-3">
+        <div class="stepwizard-row setup-panel" #indicator>
+          <div class="stepwizard-step">
+            <a (click)="setStep(1)" id="1" type="button" class="btn btn-circle" [ngClass]="step==1 ? 'btn-primary':'btn-default' ">1</a>
+            <p>Step 1</p>
+          </div>
+          <div class="stepwizard-step">
+            <a (click)="setStep(2)" id="2" type="button" class="btn btn-circle" [ngClass]="step==2 ? 'btn-primary':'btn-default' ">2</a>
+            <p>Step 2</p>
+          </div>
+          <!-- <div class="stepwizard-step">
+            <a href="#step-3" id="3" type="button" class="btn btn-circle" [ngClass]="step==3 ? 'btn-primary ':'btn-default' ">3</a>
+            <p>Step 3</p>
+          </div> -->
+        </div>
+      </div>
+
+      <form #f='ngForm' (ngSubmit)="submit()">
+        <div class="row setup-content" id="step-1" *ngIf="step==1">
+          <div class="col-md-12">
+            <h3> Organisation Setup</h3>
+            <div>
+              <div class="profile-info">
+                <div class="row">
+                  <div class="col-xs-2 col-md-2 profile-pic">
+                    <img src="http://placehold.it/380x500" alt="" />
+                    <label class="btn btn-default">
+                      <span>Change Picture</span>
+                      <input id="my-file-selector" type="file" style="display:none;">
+                    </label>
+                  </div>
+                  <div class="col-xs-10 col-md-10">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-12">
+
+                        <div class="form-group has-success has-feedback">
+                          <div class="col-xs-12">
+                            <label class="control-label" for="orgName">Organization Name</label>
+                            <input type="text" name="orgName" class="form-control" placeholder="Organization Name" 
+                              [(ngModel)]="orgProfile.orgName" #orgName="ngModel" required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                            <span class="help-block" style="display:none">Organization Name</span>
+                          </div>
+                          <div class="col-xs-6">
+                            <label class="control-label" for="phone">Contact Number</label>
+                            <input type="number" name="phone" class="form-control" placeholder="Phone Number" 
+                              [(ngModel)]="orgProfile.phone" #phone="ngModel" required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                            <span class="help-block" style="display:none">Username is available</span>
+                          </div>
+                          <div class="col-xs-6">
+                            <label class="control-label" for="city">City</label>
+                            <input type="text" name="city" class="form-control" placeholder="City" 
+                              [(ngModel)]="orgProfile.city" #city="ngModel" required>
+                            <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                            <span class="help-block" style="display:none">Username is available</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="form-group has-success has-feedback">
+                  <div class="col-xs-6">
+                    <label class="control-label" for="addressLine1">Address Line 1</label>
+                    <input type="text" name="addressLine1" class="form-control" placeholder="Address Line 1" 
+                      [(ngModel)]="orgProfile.addressLine1" #address="ngModel">
+                    <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                    <span class="help-block" style="display:none">Address Line 1</span>
+                  </div>
+                  <div class="col-xs-6">
+                    <label class="control-label" for="addressLine2">Address Line 2</label>
+                    <input type="text" name="addressLine2" class="form-control" placeholder="Address Line 2" 
+                      [(ngModel)]="orgProfile.addressLine2" #address="ngModel">
+                    <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                    <span class="help-block" style="display:none">Address Line 2</span>
+                  </div>
+                </div>
+                <div class="form-group has-success has-feedback">
+                  <div class="col-xs-4">
+                    <label class="control-label" for="state">State</label>
+                    <input type="text" name="state" class="form-control" placeholder="State" 
+                      [(ngModel)]="orgProfile.state" #state="ngModel" required>
+                    <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                    <span class="help-block" style="display:none">State</span>
+                  </div>
+                  <div class="col-xs-4">
+                    <label class="control-label" for="country">Country</label>
+                    <input type="text" name="country" class="form-control" placeholder="country" 
+                      [(ngModel)]="orgProfile.country" #country="ngModel" required>
+                    <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                    <span class="help-block" style="display:none">Country</span>
+                  </div>
+                  <div class="col-xs-4">
+                    <label class="control-label" for="zipCode">Zip Code</label>
+                    <input type="number" name="zipCode" class="form-control" placeholder="Zip Code" 
+                      [(ngModel)]="orgProfile.zipCode" #zipcode="ngModel">
+                    <span class="glyphicon glyphicon-ok form-control-feedback" style="display:none"></span>
+                    <span class="help-block" style="display:none">Zip Code</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" (click)="next(2)" [disabled]="f.invalid">Next</button>
+          </div>
+        </div>
+        <div class="row setup-content" id="step-2" *ngIf="step==2">
+          <div class="col-md-12">
+            <h3>Store Setup</h3>
+            <app-filter>
+              <div class="app-nav">
+                <div class="row">
+                  <div class="col-xs-11 col-md-11">
+                    <div class="row">
+                      <div class="col-xs-4 col-md-4">
+                        <label style="padding: 6px 12px;">Enter your Store Name : </label>
+                      </div>
+                      <div class="col-xs-8 col-md-8">
+                        <label class="sr-only" for="inlineFormInput">Site Name</label>
+                        <input type="text" name="site" class="form-control mb-2" id="inlineFormInput" placeholder="Site Name" [(ngModel)]="site.name" required>
+                      </div>
+                   <!--    <div class="col-xs-6 col-md-6">
+                        <label class="sr-only" for="inlineFormInputGroup">Contact No</label>
+                        <input type="text" name="contact" class="form-control" id="inlineFormInputGroup" placeholder="Contact No" [(ngModel)]="site.contact" required>
+                      </div>
+                     <div class="col-xs-4 col-md-4">
+                        <label class="sr-only" for="inlineFormInputGroup">Email Address</label>
+                        <input type="text" name="email" class="form-control" id="inlineFormInputGroup" placeholder="Email Address" [(ngModel)]="site.email" required
+                          pattern="[^ @]*@[^ @]*">
+                      </div>  -->
+
+                    </div>
+                  </div>
+                <!--  <div class="col-xs-1 col-md-1">
+                    <button type="submit" name="contact" class="btn btn-primary mb-2" (click)="addSite()">Add</button>
+                  </div> -->
+                </div>
+              </div>
+            </app-filter>
+      <!--      <app-grid [header]='columnDefs'>
+              <tbody class="app-grid-col">
+                  <tr *ngFor='let row of rowData' (click)="detail(row)" class="grid-row">
+                  <td scope="row">
+                    {{row.menuID}}
+                  </td>
+                  <td scope="row">
+                    {{row.menuItemGroupID}}
+                  </td>
+                  <td scope="row">
+                    {{row.displayName}}
+                  </td>
+
+                </tr>
+              </tbody>
+            </app-grid> -->
+            <!-- <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" (click)="next(3)">Next</button> -->
+            <button class="btn btn-success btn-lg pull-right" type="submit" [disabled]="f.invalid">Submit</button>
+          </div>
+        </div>
+        <!-- <div class="row setup-content" id="step-3" *ngIf="step==3">
+          <div class="col-md-12">
+            <h3> Store Admin Setup</h3>
+
+            <button class="btn btn-success btn-lg pull-right" type="submit" (click)="next('_SUBMIT_')">Submit</button>
+          </div>
+        </div> -->
+      </form>
+
+    </div>
+  </div>
+</div>

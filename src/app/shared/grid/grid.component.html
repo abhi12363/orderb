@@ -1,0 +1,61 @@
+<app-modal #modal1>
+  <div class="app-modal-header">
+    header
+  </div>
+  <div class="app-modal-body">
+    Whatever content you like, form fields, anything
+    <input type="text">
+  </div>
+  <div class="app-modal-footer">
+    <button type="button" class="btn btn-default" (click)="modal1.hide()">Close</button>
+    <button type="button" class="btn btn-default" (click)="modal2.show()">Show modal 2</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+</app-modal>
+
+
+<table class="table table-sm table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th *ngFor='let col of header' >
+          <span>{{col.headerName}}</span>
+        </th>
+      </tr>
+    </thead>
+        <ng-content select=".app-grid-col"></ng-content>
+      <!--<tr *ngFor='let row of data'>
+        <td scope="row" *ngFor='let cell of header'>
+          <div *ngIf="cell.childs == undefined">
+            {{row[cell.property]}}
+          </div>
+          <div *ngIf='cell.childs' style="width:100%;">
+            <div class="collapsed clickable panel-heading glyphicon glyphicon-plus" data-toggle="collapse" 
+              data-target="#group-of-rows-1" aria-expanded="false" aria-controls="group-of-rows-1" style="float:left;">
+                {{row[cell.property]}}
+            </div>
+            <div style="width:100%;background:#ff0;">
+             <!-- <table id="group-of-rows-1" class=" collapse table table-sm table-bordered table-striped" style="width:auto;">
+                <thead>
+                  <tr>
+                    <th *ngFor='let childH of cell.childs'>
+                        <span>{{childH.headerName}}</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let rowH of row[cell.childProperty]'>
+                      <td scope="row" *ngFor='let hCell of cell.childs'>
+                        <span>
+                          {{rowH[hCell.property]}}
+                        </span>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            
+          </div>
+        </td>
+        
+      </tr> -->
+  </table>

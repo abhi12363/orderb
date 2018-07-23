@@ -1,0 +1,182 @@
+<div class="profile-info">
+      <table class="table">
+        <thead>
+          <tr>
+            <th width="20%">
+                <label>Name</label>
+            </th>
+            <th width="20%" style="padding:0px;">
+              <div class="table">
+                <tr>
+                  <td colspan="2">
+                      <label>Admin</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="50%">
+                    <label>Enable</label>
+                  </td>
+                  <td width="50%">
+                    <label>Type</label>
+                  </td>
+                </tr>
+              </div>
+            </th>
+            <th width="20%" style="padding:0px;">
+              <div class="table">
+                <tr>
+                  <td colspan="2"> 
+                      <label>Manager</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="50%">
+                    <label>Enable</label>
+                  </td>
+                  <td width="50%">
+                    <label>Type</label>
+                  </td>
+                </tr>
+              </div>
+            </th>
+            <th width="20%" style="padding:0px;">
+              <div class="table">
+                <tr>
+                  <td colspan="2">
+                      <label>Supervisor</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="50%">
+                    <label>Enable</label>
+                  </td>
+                  <td width="50%">
+                    <label>Type</label>
+                  </td>
+                </tr>
+              </div>
+            </th>
+            <th width="20%" style="padding:0px;">
+              <div class="table">
+                <tr>
+                  <td colspan="2">
+                      <label>Crew</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="50%">
+                    <label>Enable</label>
+                  </td>
+                  <td width="50%">
+                    <label>Type</label>
+                  </td>
+                </tr>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td width="20%">
+                  <label>Allow Employees to see Weather City</label>
+              </td>
+              <td width="20%" style="padding:0px;">
+                <table class="table">
+                  <tr>
+                    <td width="50%" style="text-align:center;">
+                      <app-toggler key="adminSeeWeatherCity"></app-toggler>
+                    </td>
+                    <td width="50%" style="text-align:center;">
+                      <app-toggler key="adminVisibilityType"
+                      [entries]='entries' 
+                      default="1"
+                      width="92px"
+                      (onSelection) = "getValue($event)" 
+                      ></app-toggler>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td width="20%" style="padding:0px;">
+                <table class="table">
+                  <tr>
+                    <td width="50%" style="text-align:center;">
+                      <app-toggler key="mgrSeeWeatherCity"></app-toggler>
+                    </td>
+                    <td width="50%">
+                      <app-toggler key="mgrVisibilityType"
+                      [entries]='entries' 
+                      default="1"
+                      width="92px"
+                      (onSelection) = "getValue($event)" 
+                      ></app-toggler>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td width="20%" style="padding:0px;">
+                <table class="table">
+                  <tr>
+                    <td width="50%">
+                      <app-toggler key="supervisorSeeWeatherCity"></app-toggler>
+                    </td>
+                    <td width="50%">
+                      <app-toggler key="supervisorVisibilityType"
+                      [entries]='entries' 
+                      default="1"
+                      width="92px"
+                      (onSelection) = "getValue($event)" 
+                      ></app-toggler>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td width="20%" style="padding:0px;">
+                <table class="table">
+                  <tr>
+                    <td width="50%">
+                      <app-toggler key="crewSeeWeatherCity"></app-toggler>
+                    </td>
+                    <td width="50%"> 
+                      <app-toggler key="crewVisibilityType"
+                      [entries]='entries' 
+                      default="1"
+                      width="92px"
+                      (onSelection) = "getValue($event)" 
+                      ></app-toggler>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        
+      </table>
+      
+      <!-- <div class="row">
+        <div class="col-xs-2 col-md-2">
+            <app-toggler></app-toggler>
+        </div>
+        <div class="col-xs-2 col-md-2">
+            <app-toggler></app-toggler>
+        </div>
+        <div class="col-xs-2 col-md-2">
+            <app-toggler></app-toggler>
+        </div>
+        <div class="col-xs-2 col-md-2">
+            <app-toggler></app-toggler>
+        </div>
+        <div class="col-xs-2 col-md-2">
+            <app-toggler></app-toggler>
+        </div>
+        <div class="col-xs-2 col-md-2">
+            <app-toggler></app-toggler>
+        </div>
+        <div class="col-xs-2 col-md-2">
+            <app-toggler></app-toggler>
+        </div>
+        <div class="col-xs-2 col-md-2">
+            <app-toggler></app-toggler>
+        </div>
+      </div> -->
+</div>
